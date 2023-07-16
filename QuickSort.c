@@ -53,8 +53,7 @@ void QuickSort(int a[],int l,int r)
 void main()
 {
     FILE *fp1=fopen("best.txt","w");
-    FILE *fp2=fopen("average.txt","w");
-    FILE *fp3=fopen("worst.txt","w");
+    FILE *fp2=fopen("worst.txt","w");
     srand(time(NULL));
     for(int m=10;m<=1000;m=(m<100)?m+10:m+100)
     {
