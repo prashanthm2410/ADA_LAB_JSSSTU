@@ -85,17 +85,19 @@ int main()
     }
     for(int m=100;m<=10000;m=(m<1000)?m+100:m+1000)
     {
-        count=0;
+        count=0;count1=0;
         int *a=(int *)malloc(sizeof(int)*m);
         for(int i=0;i<m;i++)
         *(a+i)=m-i;//Best Case Decreasing Order
         Heap_Sort(a,m);
-        fprintf(fp1,"%d\t\t%d\n",m,count);
+       for(int i=m;i>=1;i--)
+       delete(a,&n); fprintf(fp1,"%d\t\t%d\n",m,count+count1);
         for(int i=0;i<m;i++)
         *(a+i)=i+1;//Worst Case Decreasing Order
-        count=0;
+        count=0;count1=0;
         Heap_Sort(a,m);
-        fprintf(fp2,"%d\t\t%d\n",m,count);
+       for(int i=m;i>=1;i--)
+       delete(a,&n); fprintf(fp2,"%d\t\t%d\n",m,count+count1);
         free(a);
     }
     fclose(fp1);
