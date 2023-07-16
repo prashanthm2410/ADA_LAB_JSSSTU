@@ -17,7 +17,7 @@ int knapsack(int n,int capacity)
             else if(j<wt[i])
             v[i][j]=v[i-1][j];
             else 
-            v[i][j]=Max(knapsack(i-1,j),val[i]+v[i-1][j-wt[i]]);
+            v[i][j]=Max(knapsack(i-1,j),val[i]+knapsack(i-1,j-wt[i]);
         }
     }
    return(v[n][capacity]);
