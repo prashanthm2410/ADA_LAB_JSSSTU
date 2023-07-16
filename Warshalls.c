@@ -35,11 +35,9 @@ void main()
         //BEST CASE SPARSE
         for(int i=0;i<n;i++)
         {
-            for(int j=0;j<n;j++)
-            {
-                graph[i][i+1]=1;
-            }
+               graph[i][i+1]=1;   
         }
+        graph[n-1][1]=1;
         count=0;
         warshall(graph);
         fprintf(fp1,"%d\t\t%d\n",n,count);
