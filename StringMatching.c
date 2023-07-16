@@ -54,6 +54,7 @@ void main()
     printf("Enter the Pattern : ");
     char pattern[100];
     scanf("%s",pattern);
+    StringMatching(text,Pattern,strlen(text),strlen(Pattern),m);
     if(flag)
     printf("Pattern Found");
     else
