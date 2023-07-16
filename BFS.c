@@ -64,7 +64,7 @@ void main()
             if(visited[start]==0)
             {
             printf("\n");
-            bfs(n,0);
+            bfs(n,start);
             bfscall++;
             }
             start++;
