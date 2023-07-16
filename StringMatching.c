@@ -1,7 +1,7 @@
 #include<stdio.h>
 #include<string.h>
 #include<stdlib.h>
-int count;
+int count,flag;
 void StringMatching(char t[],char p[],int n,int m)
 {
     int j;
@@ -14,7 +14,10 @@ void StringMatching(char t[],char p[],int n,int m)
             j++;
         }
         if(j==m)
+        {
+         flag=1;
         return ;
+        }
     }
 }
 void main()
@@ -51,7 +54,7 @@ void main()
     printf("Enter the Pattern : ");
     char pattern[100];
     scanf("%s",pattern);
-    if(StringMatching(text,pattern,strlen(text),strlen(pattern)))
+    if(flag)
     printf("Pattern Found");
     else
     printf("Not matched");*/
