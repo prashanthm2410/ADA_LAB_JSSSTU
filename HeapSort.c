@@ -31,13 +31,14 @@ void Heapify(int H[], int n, int i) {
         int largest = i;
         int left = 2 * i;
         int right = 2 * i + 1;
-        count1++;
+        
         if (left <= n)
         {
+        count1++;
         if(H[left] > H[largest])
             largest = left;
            }
-        count1++;
+        //count1++;
         if (right <= n)
         {
         count1++;
