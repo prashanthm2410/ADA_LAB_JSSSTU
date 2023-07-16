@@ -61,7 +61,7 @@ void main()
         count=0;
         int *a=(int *)malloc(sizeof(int)*m);
         for(int i=0;i<m;i++)
-        *(a+i)=i+1;
+        *(a+i)=10;
         QuickSort(a,0,m-1);
         fprintf(fp1,"%d\t\t%d\n",m,count);
         count=0;
