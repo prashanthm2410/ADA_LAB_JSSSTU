@@ -6,8 +6,6 @@ void Min_Span_Tree()
     while (num_edges< n) 
     {
         min = 1000;
-
-        // In each cycle, find the minimum cost
         for (int i = 0; i < n; i++) 
         {
             for (int j = 0; j < n; j++) 
