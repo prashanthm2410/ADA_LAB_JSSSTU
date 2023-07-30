@@ -10,28 +10,28 @@ struct edge
     int u;
 } heap[10] /*heapsize*/, VT[10] /*cnt*/;
 typedef struct edge edg;
-// Min Heap function declaration
-void swap(struct edge *a, struct edge *b)
-{
-    struct edge temp = *a;
-    *a = *b;
-    *b = temp;
-}
 void heapify(struct edge arr[], int n, int i)
 {
+    while(1)
+    {
     int largest = i;
     int left = 2 * i + 1;
     int right = 2 * i + 2;
-
     if (left < n && arr[left].dist < arr[largest].dist)
         largest = left;
     if (right < n && arr[right].dist < arr[largest].dist)
         largest = right;
-
     if (largest != i)
     {
-        swap(&arr[i], &arr[largest]);
-        heapify(arr, n, largest);
+        struct edge temp = arr[i];
+            arr[i] = arr[largest];
+            arr[largest] = temp;
+            i = largest;
+    }
+    else 
+        {
+            break;
+        }
     }
 }
 void heapSort(struct edge arr[], int n)
@@ -41,25 +41,6 @@ void heapSort(struct edge arr[], int n)
         heapify(arr, n, i);
     }
 }
-// Min heap function declaration end
-
-void makegraph()
-{
-    // Make Graph
-    printf("Enter the total number of vertices:");
-    scanf("%d", &n);
-    printf("Enter the cost matrix of the Graph\n");
-    for (i = 0; i < n; i++)
-    {
-        for (j = 0; j < n; j++)
-        {
-            scanf("%d", &cost[i][j]);
-            if (cost[i][j] == 0)
-                cost[i][j] = INT_MAX;
-        }
-    }
-}
-// returns the min of the heap //astey
 edg deleteheap(edg heap[])
 {
     edg min = heap[0];
@@ -75,7 +56,6 @@ void prim()
     heap[heapsize].u = 0;
     heap[heapsize].dist = 0;
     heapsize++;
-
     while (cnt != n)
     {
         // fetching the min and appending to the visited array of edges and deleting from heap
@@ -116,7 +96,18 @@ void prim()
 void main()
 {
     int sum = 0;
-    makegraph();
+    printf("Enter the total number of vertices:");
+    scanf("%d", &n);
+    printf("Enter the cost matrix of the Graph\n");
+    for (i = 0; i < n; i++)
+    {
+        for (j = 0; j < n; j++)
+        {
+            scanf("%d", &cost[i][j]);
+            if (cost[i][j] == 0)
+                cost[i][j] = INT_MAX;
+        }
+    }
     prim();
     for (int i = 1; i < cnt; i++)
     {
