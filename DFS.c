@@ -5,7 +5,7 @@ void dfs(int n,int start,int parent)
 {
     visited[start]=1; path[start]=1;
     count++;
-    //printf("%c---->",start+65);
+    printf("%c---->",start+65);
     for(int i=0;i<n;i++)
     {
         if(d==1)
@@ -29,7 +29,7 @@ void dfs(int n,int start,int parent)
 void main()
 {
     //WHILE RUNNING FOR PLOTING COMMENT OUT THE PRINTF INSIDE THE DFS FUNCTION
-    FILE *fp=fopen("plot.txt","w");
+    /*FILE *fp=fopen("plot.txt","w");
     for(int m=2;m<=15;m++)
     {
         graphcount=0;
@@ -47,8 +47,8 @@ void main()
         dfs(m,0,-1);
         fprintf(fp,"%d\t\t%d\n",m,graphcount);
     }
-    fclose(fp);
-    /*printf("Enter the Number of vertices : ");int n,start;scanf("%d",&n);
+    fclose(fp);*/
+    printf("Enter the Number of vertices : ");int n,start;scanf("%d",&n);
     printf("Enter 1 if the Graph is Directed else 0 :");scanf("%d",&d);
     printf("Enter the Adjacency Matrix\n");
     for(int i=0;i<n;i++)
@@ -80,5 +80,5 @@ void main()
             start++;
         }
     }
-    printf("\nNumber of Conned Componenets is : %d\n",dfscall);*/
+    printf("\nNumber of Conned Componenets is : %d\n",dfscall);
 }
