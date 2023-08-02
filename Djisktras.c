@@ -37,7 +37,6 @@ ver deleteheap(struct vertex heap[])
     struct vertex min = heap[0];
     heap[0] = heap[heapsize-1];
     heapsize--;
-    heapify(heap,heapsize,0);
     return min;
 }
 void djistra()
@@ -71,10 +70,10 @@ void djistra()
                             break;
                         }
                     }
-                    HeapSort(heap,heapsize);
                 }
             }
         }
+        HeapSort(heap,heapsize);
     }
 }
 void main()
