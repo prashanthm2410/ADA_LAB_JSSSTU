@@ -7,12 +7,11 @@ int BinarySearch(int a[],int low,int high,int key)
     if(low>high)
     return -1;
     int mid = (low+high)/2;
+    count++;
     if(a[mid]==key)
     {
-        count++;
         return mid;
     }
-    count++;
     if(key<a[mid])
     return BinarySearch(a,low,mid-1,key);
     else
