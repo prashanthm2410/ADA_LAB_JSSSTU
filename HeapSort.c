@@ -26,7 +26,8 @@ void Heap_Sort(int H[], int n) {
     }
 }
 /*construction best case =n-1 worst 2(n-log(n+1))
-deletion 2(n-1)log(n-1) both best and worst*/
+deletion 2(n-1)log(n-1) both best and worst
+so overall nlogn*/
 void Heapify(int H[], int n, int i) {
     while (true) {
         int largest = i;
